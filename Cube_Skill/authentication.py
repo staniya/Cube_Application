@@ -57,28 +57,28 @@ class User(UserMixin):
 
 @app.route('/login', methods=['GET', 'POST'])
 
-def login():
-    if request.method == 'POST':
-
-
-    def __init__(self):
-
-
-
-
-# somewhere to logout
-@app.route("/logout")
-@login_required
-def logout():
-    logout_user()
-    return Response('<p>Logged out</p>')
-
-
-# handle login failed
-@app.errorhandler(401)
-def page_not_found(e):
-    return Response('<p>Login failed</p>')
-
+# def login():
+#     if request.method == 'POST':
+#
+#
+#     def __init__(self):
+#
+#
+#
+#
+# # somewhere to logout
+# @app.route("/logout")
+# @login_required
+# def logout():
+#     logout_user()
+#     return Response('<p>Logged out</p>')
+#
+#
+# # handle login failed
+# @app.errorhandler(401)
+# def page_not_found(e):
+#     return Response('<p>Login failed</p>')
+#
 
 if __name__ == "__main__":
     app.run()
