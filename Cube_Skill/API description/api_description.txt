@@ -1,0 +1,910 @@
+Request Token
+--> POST https://api.bankoncube.com/v1/api/oauth/token
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 60
+Authorization: Basic Y3ViZWFwcGJhc2ljOmN1YmVhcHBiYXNpY0AyMDkwKQ==
+identifier=user&grant_type=client_credentials&passcode=admin
+--> END POST (60-byte body)
+<-- 200 https://api.bankoncube.com/v1/api/oauth/token (273ms)
+MIN_ANDROID_VERSION: 10
+MIX_ANDROID_VERSION: 11
+MIN_IOS_VERSION: 690
+MIX_IOS_VERSION: 700
+{"access_token":"ae0ce35e-9694-4da6-a18d-daa94d54c6d5","token_type":"bearer","expires_in":463857067,"scope":"read user_management bank_management dreams_user"}
+<-- END HTTP (159-byte body)
+
+Request for OTP
+--> POST https://api.bankoncube.com/v2/user/otp http/1.1
+Content-Type: application/x-www-form-urlencoded
+access-token: ABCD
+Authorization: Bearer ae0ce35e-9694-4da6-a18d-daa94d54c6d5
+identifier=9769731499
+--> END POST (21-byte body)
+<-- 200 https://api.bankoncube.com/v2/user/otp (562ms)
+MIN_ANDROID_VERSION: 10
+MIX_ANDROID_VERSION: 11
+MIN_IOS_VERSION: 690
+MIX_IOS_VERSION: 700
+{"code":0,"message":"OTP sent Successfully."}
+<-- END HTTP (45-byte body)
+
+Validate OTP and get access token
+--> POST https://api.bankoncube.com/v1/api/oauth/token
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 58
+Authorization: Basic Y3ViZWFuZHJvaWRhcHA6Y3ViZWFuZHJvaWRhcHAkMjA4MA==
+identifier=9769731499&grant_type=onetimepass&passcode=8672
+--> END POST (58-byte body)
+<-- 200 https://api.bankoncube.com/v1/api/oauth/token (579ms)
+MIN_ANDROID_VERSION: 10
+MIX_ANDROID_VERSION: 11
+MIN_IOS_VERSION: 690
+MIX_IOS_VERSION: 700
+{"access_token":"0555e09c-b4a0-4e23-b8f4-4550b24ab1d7","token_type":"bearer","refresh_token":"4c7e454f-874f-4377-ba0b-a9ad20e95dd8","expires_in":4944514,"scope":"read user_management bank_management dreams_user"}
+<-- END HTTP (212-byte body)
+
+```
+ <0x0000600000016090> [REQUEST] GET https://apis.bankoncube.com/m3/core/money_details/
+ ├─ Headers
+ │ CUBE-APP-CODE-IOS: 4055
+ │ CUBE-DEVICE-ID: B3A1742B-218A-4E00-8CF3-7DACDED9489D
+ │ Authorization: Bearer 5dc8408b-8c7e-4982-b0db-52b9c85bceac
+ ├─ Body
+ │ <none>
+
+<0x0000600000016090> [RESPONSE] 200 (NO ERROR) https://apis.bankoncube.com/m3/core/money_details/
+ ├─ Headers
+ │ Content-Type: application/json
+ │ Server: openresty/1.11.2.1
+ │ Date: Wed, 06 Dec 2017 06:07:04 GMT
+ │ Allow: GET, OPTIONS
+ │ MIN_ANDROID_VERSION: 10
+ │ MIX_ANDROID_VERSION: 11
+ │ Transfer-Encoding: Identity
+ │ MIX_IOS_VERSION: 700
+ │ MIN_IOS_VERSION: 690
+ │ Vary: Accept
+ │ X-Frame-Options: SAMEORIGIN
+ ├─ Body
+ │ {
+ │   "message" : "success",
+ │   "data" : {
+ │     "totalFunds" : 1251,
+ │     "totalBills" : 1,
+ │     "billsAllocation" : 0,
+ │     "wealthTotalInvested" : 0,
+ │     "totalInvestments" : 0,
+ │     "btrbankLifetimeProfit" : 1,
+ │     "btrbankFund" : 1251,
+ │     "safeToSpend" : 0,
+ │     "salary" : 0,
+ │     "totalSalaries" : 1,
+ │     "btrbankProfit" : 1,
+ │     "timeSaved" : 0,
+ │     "emergencyCash" : 0,
+ │     "wealthFund" : 0,
+ │     "wealthxirr" : 0,
+ │     "wealthMoney" : [
+ │       {
+ │         "Conservative" : 0
+ │       },
+ │       {
+ │         "Moderate" : 0
+ │       },
+ │       {
+ │         "Aggressive" : 0
+ │       },
+ │       {
+ │         "China" : 0
+ │       }
+ │     ],
+ │     "philanthropy" : 400,
+ │     "bankBalance" : 0,
+ │     "extraCash" : 0,
+ │     "livesImpacted" : 17,
+ │     "bbxirr" : 4.1500000000000004,
+ │     "totalExpenses" : 4,
+ │     "wealthProfit" : 0,
+ │     "btrBankTotalInvested" : 750,
+ │     "wealthLifetimeProfit" : 0
+ │   },
+ │   "code" : "0"
+ │ }
+
+ <0x00006000000160e0> [REQUEST] GET https://api.bankoncube.com/m3/core/v5/funds/?account=true
+ ├─ Headers
+ │ CUBE-APP-CODE-IOS: 4055
+ │ CUBE-DEVICE-ID: B3A1742B-218A-4E00-8CF3-7DACDED9489D
+ │ Authorization: Bearer 5dc8408b-8c7e-4982-b0db-52b9c85bceac
+ ├─ Body
+ │ <none>
+
+<0x00006000000160e0> [RESPONSE] 200 (NO ERROR) https://api.bankoncube.com/m3/core/v5/funds/?account=true
+ ├─ Headers
+ │ Content-Type: application/json
+ │ Server: openresty/1.11.2.1
+ │ Date: Wed, 06 Dec 2017 06:08:37 GMT
+ │ Allow: OPTIONS, GET
+ │ MIN_ANDROID_VERSION: 10
+ │ MIX_ANDROID_VERSION: 11
+ │ Transfer-Encoding: Identity
+ │ MIX_IOS_VERSION: 700
+ │ MIN_IOS_VERSION: 690
+ │ Vary: Accept
+ │ X-Frame-Options: SAMEORIGIN
+ ├─ Body
+ │ {
+ │   "message" : "",
+ │   "details" : [
+ │     {
+ │       "returns" : "1 year 6.58%, 3 years 7.88%",
+ │       "saleInTransit" : 0,
+ │       "minAmount" : 5100,
+ │       "fund" : [
+ │         {
+ │           "description" : "Stable Growth",
+ │           "time_to_withdraw" : 30,
+ │           "group_id" : 1,
+ │           "active" : true,
+ │           "return_oneyear" : "6.67",
+ │           "return_threeyears" : "7.63",
+ │           "group_name" : "Better Bank",
+ │           "percentProfit" : 0.23787349333332106,
+ │           "withdrawableBalance" : 751.78405119999991,
+ │           "saleInTransit" : 0,
+ │           "min_deposit" : "100.000000",
+ │           "min_next_deposit" : "100.000000",
+ │           "category" : "l",
+ │           "balance" : 1251.7840511999998,
+ │           "investmentsInTransit" : 500,
+ │           "risk_category" : 0,
+ │           "lifeTimeFun" : 1.784051199999908,
+ │           "time_to_deposit" : 4320,
+ │           "id" : 1,
+ │           "purchaseInTransit" : 500,
+ │           "totalInvested" : 750,
+ │           "folio_id" : "53266429269612",
+ │           "fund_name" : "RELLFTPI-GR",
+ │           "min_deposit_multiplier" : "1.000000",
+ │           "xirr" : 4.1497802734375089,
+ │           "display_name" : "Reliance Liquid Fund",
+ │           "totalProfit" : 1.784051199999908,
+ │           "order" : 1,
+ │           "min_withdrawal" : "10.000000"
+ │         },
+ │         {
+ │           "description" : "UTI ultra short term",
+ │           "time_to_withdraw" : 4320,
+ │           "group_id" : 1,
+ │           "active" : true,
+ │           "return_oneyear" : "6.49",
+ │           "return_threeyears" : "8.13",
+ │           "group_name" : "Better Bank",
+ │           "percentProfit" : 0,
+ │           "withdrawableBalance" : 0,
+ │           "saleInTransit" : 0,
+ │           "min_deposit" : "5000.000000",
+ │           "min_next_deposit" : "1000.000000",
+ │           "category" : "u",
+ │           "balance" : 0,
+ │           "investmentsInTransit" : 0,
+ │           "risk_category" : 0,
+ │           "lifeTimeFun" : 0,
+ │           "time_to_deposit" : 4320,
+ │           "id" : 2,
+ │           "purchaseInTransit" : 0,
+ │           "totalInvested" : 0,
+ │           "folio_id" : "58642271169896",
+ │           "fund_name" : "UTIFLOTNG-GR",
+ │           "min_deposit_multiplier" : "1.000000",
+ │           "xirr" : 0,
+ │           "display_name" : "UTI Floating Rate Short Term Fund",
+ │           "totalProfit" : 0,
+ │           "order" : 2,
+ │           "min_withdrawal" : "500.000000"
+ │         }
+ │       ],
+ │       "withdrawableBalance" : 751.78405119999991,
+ │       "balance" : 1251.7840511999998,
+ │       "totalProfit" : 1.784051199999908,
+ │       "totalInvested" : 750,
+ │       "group_id" : 1,
+ │       "group" : "Better Bank",
+ │       "purchaseInTransit" : 500,
+ │       "minWithdraw" : 510,
+ │       "percentProfit" : 0.23787349333332106,
+ │       "lifeTimeFun" : 1.784051199999908,
+ │       "investmentsInTransit" : 500,
+ │       "xirr" : 4.1497802734375089
+ │     },
+ │     {
+ │       "returns" : "1 year 7.11%, 3 years 8.36%",
+ │       "saleInTransit" : 0,
+ │       "minAmount" : 5000,
+ │       "fund" : [
+ │         {
+ │           "description" : "",
+ │           "time_to_withdraw" : 4320,
+ │           "group_id" : 2,
+ │           "active" : true,
+ │           "return_oneyear" : "7.11",
+ │           "return_threeyears" : "8.36",
+ │           "group_name" : "Conservative",
+ │           "percentProfit" : 0,
+ │           "withdrawableBalance" : 0,
+ │           "saleInTransit" : 0,
+ │           "min_deposit" : "5000.000000",
+ │           "min_next_deposit" : "1000.000000",
+ │           "category" : "w",
+ │           "balance" : 0,
+ │           "investmentsInTransit" : 0,
+ │           "risk_category" : 0,
+ │           "lifeTimeFun" : 0,
+ │           "time_to_deposit" : 4320,
+ │           "id" : 3,
+ │           "purchaseInTransit" : 0,
+ │           "totalInvested" : 0,
+ │           "folio_id" : "74806406496759",
+ │           "fund_name" : "RGF-MTGP-GR",
+ │           "min_deposit_multiplier" : "1.000000",
+ │           "xirr" : 0,
+ │           "display_name" : "Invesco India Medium Term Bond Fund",
+ │           "totalProfit" : 0,
+ │           "order" : 3,
+ │           "min_withdrawal" : "1000.000000"
+ │         }
+ │       ],
+ │       "withdrawableBalance" : 0,
+ │       "balance" : 0,
+ │       "totalProfit" : 0,
+ │       "totalInvested" : 0,
+ │       "group_id" : 2,
+ │       "group" : "Conservative",
+ │       "purchaseInTransit" : 0,
+ │       "minWithdraw" : 1000,
+ │       "percentProfit" : 0,
+ │       "lifeTimeFun" : 0,
+ │       "investmentsInTransit" : 0,
+ │       "xirr" : 0
+ │     },
+ │     {
+ │       "returns" : "1 year 42.82%, 3 years 20.755%",
+ │       "saleInTransit" : 0,
+ │       "minAmount" : 10000,
+ │       "fund" : [
+ │         {
+ │           "description" : "Best Mid-sized Firms",
+ │           "time_to_withdraw" : 4320,
+ │           "group_id" : 4,
+ │           "active" : true,
+ │           "return_oneyear" : "47.11",
+ │           "return_threeyears" : "20.28",
+ │           "group_name" : "Aggressive",
+ │           "percentProfit" : 0,
+ │           "withdrawableBalance" : 0,
+ │           "saleInTransit" : 0,
+ │           "min_deposit" : "5000.000000",
+ │           "min_next_deposit" : "1000.000000",
+ │           "category" : "w",
+ │           "balance" : 0,
+ │           "investmentsInTransit" : 0,
+ │           "risk_category" : 2,
+ │           "lifeTimeFun" : 0,
+ │           "time_to_deposit" : 4320,
+ │           "id" : 6,
+ │           "purchaseInTransit" : 0,
+ │           "totalInvested" : 0,
+ │           "folio_id" : "2761026791957",
+ │           "fund_name" : "CREQGP-GR",
+ │           "min_deposit_multiplier" : "1.000000",
+ │           "xirr" : 0,
+ │           "display_name" : "Canara Robeco Emerging Equities Fund",
+ │           "totalProfit" : 0,
+ │           "order" : 6,
+ │           "min_withdrawal" : "1.000000"
+ │         },
+ │         {
+ │           "description" : "",
+ │           "time_to_withdraw" : 4320,
+ │           "group_id" : 4,
+ │           "active" : true,
+ │           "return_oneyear" : "38.53",
+ │           "return_threeyears" : "21.23",
+ │           "group_name" : "Aggressive",
+ │           "percentProfit" : 0,
+ │           "withdrawableBalance" : 0,
+ │           "saleInTransit" : 0,
+ │           "min_deposit" : "5000.000000",
+ │           "min_next_deposit" : "1000.000000",
+ │           "category" : "w",
+ │           "balance" : 0,
+ │           "investmentsInTransit" : 0,
+ │           "risk_category" : 2,
+ │           "lifeTimeFun" : 0,
+ │           "time_to_deposit" : 4320,
+ │           "id" : 7,
+ │           "purchaseInTransit" : 0,
+ │           "totalInvested" : 0,
+ │           "folio_id" : "64246018867899",
+ │           "fund_name" : "CPGP-GR",
+ │           "min_deposit_multiplier" : "1.000000",
+ │           "xirr" : 0,
+ │           "display_name" : "Motilal Oswal MOSt Focused Multicap 35 Fund",
+ │           "totalProfit" : 0,
+ │           "order" : 7,
+ │           "min_withdrawal" : "1.000000"
+ │         }
+ │       ],
+ │       "withdrawableBalance" : 0,
+ │       "balance" : 0,
+ │       "totalProfit" : 0,
+ │       "totalInvested" : 0,
+ │       "group_id" : 4,
+ │       "group" : "Aggressive",
+ │       "purchaseInTransit" : 0,
+ │       "minWithdraw" : 2,
+ │       "percentProfit" : 0,
+ │       "lifeTimeFun" : 0,
+ │       "investmentsInTransit" : 0,
+ │       "xirr" : 0
+ │     }
+ │   ],
+ │   "code" : 0
+ │ }
+
+
+ <0x00006040000095f0> [REQUEST] GET https://cubeadmin.bankoncube.com/biller/v1/bills
+ ├─ Headers
+ │ CUBE-APP-CODE-IOS: 4055
+ │ CUBE-DEVICE-ID: B3A1742B-218A-4E00-8CF3-7DACDED9489D
+ │ Authorization: Bearer 5dc8408b-8c7e-4982-b0db-52b9c85bceac
+ ├─ Body
+ │ <none>
+
+<0x00006040000095f0> [RESPONSE] 200 (NO ERROR) https://cubeadmin.bankoncube.com/biller/v1/bills
+ ├─ Headers
+ │ X-XSS-Protection: 1; mode=block
+ │ Pragma: no-cache
+ │ MIX_IOS_VERSION: 700
+ │ MIN_IOS_VERSION: 690
+ │ Content-Type: application/json;charset=UTF-8
+ │ Connection: keep-alive
+ │ Expires: 0
+ │ X-Content-Type-Options: nosniff
+ │ MIN_ANDROID_VERSION: 10
+ │ Transfer-Encoding: Identity
+ │ MIX_ANDROID_VERSION: 11
+ │ Server: openresty/1.11.2.1
+ │ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+ │ Date: Wed, 06 Dec 2017 06:04:01 GMT
+ ├─ Body
+ │ [
+ │   {
+ │     "amount" : 50000,
+ │     "createdDate" : 1511363942000,
+ │     "id" : 2987,
+ │     "payable" : false,
+ │     "title" : "test",
+ │     "recurrance" : {
+ │       "year" : 2017,
+ │       "frequency" : "YEARLY",
+ │       "day" : 1,
+ │       "month" : 6
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 50000,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1527869640000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     }
+ │   },
+ │   {
+ │     "amount" : 105000,
+ │     "createdDate" : 1511520045000,
+ │     "id" : 3002,
+ │     "payable" : false,
+ │     "title" : "Party In Las Vegas",
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "frequency" : "ONCE",
+ │       "day" : 1,
+ │       "month" : 5
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 105000,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1525190760000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     }
+ │   },
+ │   {
+ │     "amount" : 500,
+ │     "createdDate" : 1511538893000,
+ │     "id" : 3003,
+ │     "payable" : false,
+ │     "title" : "test 5",
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "frequency" : "YEARLY",
+ │       "day" : 1,
+ │       "month" : 1
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 500,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1514822940000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     }
+ │   },
+ │   {
+ │     "amount" : 10,
+ │     "createdDate" : 1512017656000,
+ │     "id" : 3047,
+ │     "payable" : true,
+ │     "title" : "Vodafone Bill",
+ │     "recurrance" : {
+ │       "year" : 0,
+ │       "frequency" : "MONTHLY",
+ │       "day" : 10,
+ │       "month" : 0
+ │     },
+ │     "stats" : {
+ │       "status" : "DUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 10,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1512921780000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "billId" : null,
+ │       "circle" : "MUM",
+ │       "consumerName" : null,
+ │       "operatorName" : null,
+ │       "operator" : "VODAFONE",
+ │       "serviceType" : "MOB_BP",
+ │       "billIdentifier" : null,
+ │       "postpaidMobileNumber" : "7506303163",
+ │       "billShortName" : null,
+ │       "accountNumber" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAFETCHPAY",
+ │       "setupStatus" : "ACTIVE"
+ │     }
+ │   },
+ │   {
+ │     "amount" : 50008,
+ │     "createdDate" : 1512017788000,
+ │     "id" : 3048,
+ │     "payable" : true,
+ │     "title" : "Test",
+ │     "recurrance" : {
+ │       "year" : 0,
+ │       "frequency" : "MONTHLY",
+ │       "day" : 0,
+ │       "month" : 0
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 50008,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1514650500000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "payeeMobileNumber" : null,
+ │       "billIdentifier" : null,
+ │       "billId" : null,
+ │       "payeeVPA" : null,
+ │       "operatorName" : null,
+ │       "billShortName" : null,
+ │       "payeeIfsc" : "Hdfc000012",
+ │       "serviceType" : "DRIVER_PAY",
+ │       "operator" : "VPA2ACCOUNT",
+ │       "remark" : null,
+ │       "payeeAccountNumber" : "500885",
+ │       "payeeName" : "Test",
+ │       "payerVPA" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     }
+ │   },
+ │   {
+ │     "amount" : 52,
+ │     "createdDate" : 1512031572000,
+ │     "id" : 3058,
+ │     "payable" : false,
+ │     "title" : "test8",
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "frequency" : "YEARLY",
+ │       "day" : 1,
+ │       "month" : 2
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 52,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1517501460000
+ │     },
+ │     "preferences" : {
+ │       "autopay" : false,
+ │       "thresholdAmount" : null,
+ │       "thresholdDate" : null
+ │     },
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billDueDate" : null,
+ │       "billDetails" : null,
+ │       "billStatus" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     }
+ │   }
+ │ ]
+
+ <0x000060400000abf0> [REQUEST] GET https://api.bankoncube.com/m3/core/v5/expenses_status/
+ ├─ Headers
+ │ CUBE-APP-CODE-IOS: 4055
+ │ CUBE-DEVICE-ID: B3A1742B-218A-4E00-8CF3-7DACDED9489D
+ │ Authorization: Bearer 5dc8408b-8c7e-4982-b0db-52b9c85bceac
+ ├─ Body
+ │ <none>
+
+<0x000060400000abf0> [RESPONSE] 200 (NO ERROR) https://api.bankoncube.com/m3/core/v5/expenses_status/
+ ├─ Headers
+ │ Content-Type: application/json
+ │ Server: openresty/1.11.2.1
+ │ Date: Wed, 06 Dec 2017 06:10:45 GMT
+ │ Allow: GET, OPTIONS
+ │ MIN_ANDROID_VERSION: 10
+ │ MIX_ANDROID_VERSION: 11
+ │ Transfer-Encoding: Identity
+ │ MIX_IOS_VERSION: 700
+ │ MIN_IOS_VERSION: 690
+ │ Vary: Accept
+ │ X-Frame-Options: SAMEORIGIN
+ ├─ Body
+ │ [
+ │   {
+ │     "id" : 2987,
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 50000,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1527869640000
+ │     },
+ │     "recurrance" : {
+ │       "year" : 2017,
+ │       "day" : 1,
+ │       "month" : 6,
+ │       "frequency" : "YEARLY"
+ │     },
+ │     "preferences" : {
+ │       "thresholdAmount" : null,
+ │       "autopay" : false,
+ │       "thresholdDate" : null
+ │     },
+ │     "payable" : false,
+ │     "amount" : 50000,
+ │     "createdDate" : 1511363942000,
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billStatus" : null,
+ │       "billDetails" : null,
+ │       "billDueDate" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "title" : "test",
+ │     "savedAmount" : 0
+ │   },
+ │   {
+ │     "id" : 3002,
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 105000,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1525190760000
+ │     },
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "day" : 1,
+ │       "month" : 5,
+ │       "frequency" : "ONCE"
+ │     },
+ │     "preferences" : {
+ │       "thresholdAmount" : null,
+ │       "autopay" : false,
+ │       "thresholdDate" : null
+ │     },
+ │     "payable" : false,
+ │     "amount" : 105000,
+ │     "createdDate" : 1511520045000,
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billStatus" : null,
+ │       "billDetails" : null,
+ │       "billDueDate" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "title" : "Party In Las Vegas",
+ │     "savedAmount" : 0
+ │   },
+ │   {
+ │     "id" : 3003,
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 500,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1514822940000
+ │     },
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "day" : 1,
+ │       "month" : 1,
+ │       "frequency" : "YEARLY"
+ │     },
+ │     "preferences" : {
+ │       "thresholdAmount" : null,
+ │       "autopay" : false,
+ │       "thresholdDate" : null
+ │     },
+ │     "payable" : false,
+ │     "amount" : 500,
+ │     "createdDate" : 1511538893000,
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billStatus" : null,
+ │       "billDetails" : null,
+ │       "billDueDate" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "title" : "test 5",
+ │     "savedAmount" : 0
+ │   },
+ │   {
+ │     "id" : 3058,
+ │     "body" : {
+ │       "billIdentifier" : null,
+ │       "operatorName" : null,
+ │       "serviceType" : "TRACKABLE_PAY",
+ │       "operator" : "EXPENSE",
+ │       "billId" : null,
+ │       "billShortName" : null
+ │     },
+ │     "stats" : {
+ │       "status" : "NODUE",
+ │       "lastPaidAmount" : null,
+ │       "dueAmount" : 52,
+ │       "lastPaidDate" : null,
+ │       "dueDate" : 1517501460000
+ │     },
+ │     "recurrance" : {
+ │       "year" : 2018,
+ │       "day" : 1,
+ │       "month" : 2,
+ │       "frequency" : "YEARLY"
+ │     },
+ │     "preferences" : {
+ │       "thresholdAmount" : null,
+ │       "autopay" : false,
+ │       "thresholdDate" : null
+ │     },
+ │     "payable" : false,
+ │     "amount" : 52,
+ │     "createdDate" : 1512031572000,
+ │     "settings" : {
+ │       "type" : "INSTAPAY",
+ │       "setupStatus" : "INACTIVE"
+ │     },
+ │     "presentmentDetail" : {
+ │       "billDate" : null,
+ │       "partialPayment" : false,
+ │       "billDueAmount" : null,
+ │       "billNumber" : null,
+ │       "billStatus" : null,
+ │       "billDetails" : null,
+ │       "billDueDate" : null,
+ │       "payWithoutBill" : false,
+ │       "externalBillId" : null
+ │     },
+ │     "title" : "test8",
+ │     "savedAmount" : 0
+ │   }
+ │ ]
+
+ 	static let knowMoreRewards = "https://www.bankoncube.com/faq.html#rewards"
+    static let knowMorePhilanthropy = "https://www.bankoncube.com/faq.html#do-good"
+    static let knowMoreInstantCash = "https://www.bankoncube.com/faq.html#instant-cash"
+    static let knowMoreDeposit = "https://www.bankoncube.com/faq.html#get-rich"
+    static let knowMoreWithdraw = "https://www.bankoncube.com/faq.html#withdraw"
+    static let knowMoreAutoDebit = "https://www.bankoncube.com/faq.html#auto-debit"
+    static let knowMoreBetterBank = "https://www.bankoncube.com/faq.html#lazy-money"```
