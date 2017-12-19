@@ -158,7 +158,7 @@ def login_otp(request):
 # API connections
 
 
-# TODO for the APIs below, I have to add the acess token to use them from above
+# TODO for the APIs below, I have to add the access token to use them from above
 # TODO could pass Cube app version and unique device id as a header
 def money_details():
     headers = {'Authorization': 'Bearer 5dc8408b-8c7e-4982-b0db-52b9c85bceac'}
