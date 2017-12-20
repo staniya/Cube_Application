@@ -4,9 +4,7 @@
     <list default="true" id="aa22a6d5-a9a5-4ede-bcb9-fa3cf0f609fc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Cube_Skill/Cube_Application.py" afterPath="$PROJECT_DIR$/Cube_Skill/Cube_Application.py" />
-      <change beforePath="$PROJECT_DIR$/Cube_Skill/README.md" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Cube_Skill/ask/deployment_test/config/config.py" afterPath="$PROJECT_DIR$/Cube_Skill/ask/deployment_test/config/config.py" />
-      <change beforePath="$PROJECT_DIR$/Cube_Skill/authentication.py" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Cube_Skill/lambda_function.py" afterPath="$PROJECT_DIR$/Cube_Skill/lambda_function.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,9 +21,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
               <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -35,9 +31,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
               <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,8 +139,8 @@
         <option value="$PROJECT_DIR$/Cube_Skill/authentication.py" />
         <option value="$PROJECT_DIR$/Cube_Skill/Cube_Application.py" />
         <option value="$PROJECT_DIR$/Cube_Skill/ask/deployment_test/config/config.py" />
-        <option value="$PROJECT_DIR$/Cube_Skill/lambda_function.py" />
         <option value="$PROJECT_DIR$/Cube_Skill/flask-jwt-auth/requirements.txt" />
+        <option value="$PROJECT_DIR$/Cube_Skill/lambda_function.py" />
       </list>
     </option>
   </component>
@@ -708,9 +702,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -726,9 +718,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-128">
           <caret line="21" column="7" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding>
-            <element signature="e#149#186#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -744,9 +734,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
